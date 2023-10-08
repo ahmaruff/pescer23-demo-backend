@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/', function() {
+    return response()->json([
+        'app_name' => 'Pescer CRUD Book',
+        'description' => 'simple CRUD app for backend Demonstration',
+        'laravel_version' => app()->version(),
+    ]);
 });
 
-// Route::get('/books', [BookController::class, 'index'])->name('book.index');
 Route::resource('books', BookController::class)->except(['create', 'edit']);
