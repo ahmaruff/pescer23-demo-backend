@@ -20,7 +20,7 @@ Sebuah web API sederhana CRUD buku.
 | GET | /books | n/a | n/a | return array of books |  
 | POST | /books | n/a | title, author, category['fiction', 'non-fiction'], description | create new book record |  
 | GET | /books/{id} | id: int | n/a | return single book record |
-| PUT  | /books/{id}/edit | id: int | title, author, category['fiction', 'non-fiction'], description | update book record |
+| PUT  | /books/{id} | id: int | title, author, category['fiction', 'non-fiction'], description | update book record |
 | DELETE |  /books/{id} | id: int | n/a | delete book record |
 ## Response Template
 
