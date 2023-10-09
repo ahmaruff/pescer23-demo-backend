@@ -22,4 +22,8 @@ Route::get('/', function() {
     ]);
 });
 
-Route::resource('books', BookController::class)->except(['create', 'edit']);
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::post('/books', [BookController::class, 'store'])->name('books.store');
+Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
+Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update');
+Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('books.destroy');
